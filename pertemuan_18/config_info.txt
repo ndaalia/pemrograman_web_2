@@ -1,0 +1,22 @@
+========================================================================
+PANDUAN KONFIGURASI DI FILE php.ini (C:\xampp\php\php.ini)
+========================================================================
+
+1. MENYEMBUNYIKAN PESAN PERINGATAN (NOTICE)
+   Cari parameter: error_reporting 
+   Ubah nilainya menjadi:
+   error_reporting = E_ALL & ~E_NOTICE
+   (Artinya: PHP menampilkan semua pesan error kecuali pesan NOTICE)
+
+2. MENGATASI TIMEOUT KARENA EKSPLORASI ALGORITMA YANG LAMA
+   Pesan Error: "Fatal error: Maximum execution time exceeded"
+   Cari parameter: max_execution_time 
+   Ubah batas detiknya (contoh menjadi 9999 detik):
+   max_execution_time = 9999 
+
+3. MENGATASI KEGAGALAN UPLOAD FILE UKURAN BESAR
+   Cari dan ubah dua parameter berikut (contoh batas maksimum dinaikkan ke 80 Megabytes):
+   upload_max_filesize = 80M 
+   post_max_size = 80M
+
+*Catatan Penting: Setelah mengubah pengaturan php.ini di atas, Anda wajib me-restart modul Apache pada XAMPP Control Panel Anda[cite: 387, 408].
